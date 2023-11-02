@@ -23,14 +23,14 @@
             <th>Bæta við körfu</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="cartLine">
           <tr data-product-id="1">
             <td>HTML húfa</td>
             <td>Húfa sem heldur hausnum heitum og hvíslar hugsanlega að þér hvaða element væri best að nota.</td>
             <td>5.000 kr.-</td>
             <td>
               <form class="add" method="post">
-                <label>Fjöldi: <input type="number" value="1" min="0" max="99"></label>
+                <label>Fjöldi: <input class="quantityInput" type="number" value="1" min="0" max="99"></label>
                 <button>Bæta við</button>
               </form>
             </td>
@@ -41,7 +41,7 @@
             <td>3.000 kr.-</td>
             <td>
               <form class="add" method="post">
-                <label>Fjöldi: <input type="number" value="1" min="0" max="99"></label>
+                <label>Fjöldi: <input class="quantityInput" type="number" value="1" min="0" max="99"></label>
                 <button>Bæta við</button>
               </form>
             </td>
@@ -49,10 +49,10 @@
           <tr data-product-id="3">
             <td>JavaScript jakki</td>
             <td>Mjög töff jakki fyrir öll sem skrifa JavaScript reglulega.</td>
-            <td><span class="price">20.000 kr.-</span></td>
+            <td>20.000 kr.-</td>
             <td>
               <form class="add" method="post">
-                <label>Fjöldi: <input type="number" value="1" min="0" max="99"></label>
+                <label>Fjöldi: <input class="quantityInput" type="number" value="1" min="0" max="99"></label>
                 <button>Bæta við</button>
               </form>
             </td>
@@ -77,29 +77,16 @@
             <th>Eyða</th>
           </tr>
         </thead>
-        <tbody>
-          <tr data-cart-product-id="1">
-            <td class="title">HTML húfa</td>
-            <td class="quantity">1</td>
-            <td class="price"><span class="price">5.000 kr.-</span></td>
-            <td class="total"><span class="price">5.000 kr.-</span></td>
-            <td>
-              <form class="remove" method="post">
-                <button>Eyða</button>
-              </form>
-            </td>
-          </tr>
+        <tbody class="addToCart">
         </tbody>
         <tfoot>
           <tr>
             <td colspan="3">Samtals</td>
-            <td><span class="price">5.000 kr.-</span></td>
+            <td><span class="totalsumprice"></span></td>
             <td></td>
           </tr>
         </tfoot>
       </table>
-
-      </div>
 
       <form method="post">
         <div class="form-field">
@@ -110,7 +97,7 @@
           <label for="address">Heimilisfang:</label>
           <input type="text" name="address" id="address">
         </div>
-        <button>Ganga frá kaupum</button>
+        <button id="completePurchaseBtn">Ganga frá kaupum</button>
       </form>
 
     </section>
